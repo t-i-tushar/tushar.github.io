@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Portal</title>
+    <style>
+        :root {
+            /* Eye-friendly muted palette (Charcoal, Slate, Sage, and Muted Amber) */
+            --bg-main: #121824;
+            --bg-card: #1E293B;
+            --accent-islamic: #CD9A62;
+            --accent-general: #38BDF8;
+            --border-color: #334155;
+            --text-light: #E2E8F0;
+            --text-muted: #94A3B8;
+            
+            --badge-bn: rgba(241, 148, 148, 0.12);
+            --badge-bn-txt: #F19494;
+            --badge-en: rgba(125, 211, 252, 0.12);
+            --badge-en-txt: #7DD3FC;
+            --badge-ar: rgba(110, 231, 183, 0.12);
+            --badge-ar-txt: #6EE7B7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #F8FAFC;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-owner {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #7DD3FC;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .home-btn {
+            display: block;
+            text-align: center;
+            background: #334155;
+            color: #7DD3FC;
+            padding: 1rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #475569;
+            color: #F8FAFC;
+            border-color: #64748B;
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .academic-search-box {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-general);
+            background-color: #1E293B;
+        }
+
+        .engine-select {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 0 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .engine-select:focus {
+            border-color: var(--accent-general);
+        }
+
+        .search-submit-btn {
+            background-color: #334155;
+            color: #7DD3FC;
+            border: 1px solid #475569;
+            padding: 0 1.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .search-submit-btn:hover {
+            background-color: #475569;
+            color: #F8FAFC;
+        }
+
+        .result-link-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .persistent-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(56, 189, 248, 0.08);
+            color: #7DD3FC;
+            border: 1px dashed rgba(56, 189, 248, 0.4);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .persistent-link-btn:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-style: solid;
+        }
+
+        .filter-section {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.5px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.6rem;
+            overflow-x: auto;
+            padding-bottom: 0.25rem;
+        }
+
+        .filter-btn {
+            background: #334155;
+            border: 1px solid #475569;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            color: #CBD5E1;
+        }
+
+        .filter-btn:hover {
+            background: #475569;
+            color: #F8FAFC;
+        }
+
+        .filter-btn.active {
+            background: #475569;
+            color: #7DD3FC;
+            border-color: #64748B;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 1.5rem;
+        }
+
+        .counter-banner {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lib-card {
+            background-color: var(--bg-card);
+            border-radius: 14px;
+            padding: 1.75rem;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .lib-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .lib-card.card-islamic { border-left: 4px solid var(--accent-islamic); }
+        .lib-card.card-general { border-left: 4px solid var(--accent-general); }
+
+        .lib-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .badges-wrapper {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+
+        .lang-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .lang-bangla { background-color: var(--badge-bn); color: var(--badge-bn-txt); }
+        .lang-english { background-color: var(--badge-en); color: var(--badge-en-txt); }
+        .lang-arabic { background-color: var(--badge-ar); color: var(--badge-ar-txt); }
+
+        .type-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 700;
+            background: rgba(205, 154, 98, 0.12);
+            color: var(--accent-islamic);
+            text-transform: uppercase;
+        }
+
+        .lib-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #F1F5F9;
+            margin-bottom: 0.5rem;
+        }
+
+        .lib-desc {
+            font-size: 0.9rem;
+            color: #94A3B8;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-meta-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .meta-tag {
+            background: #1E293B;
+            border: 1px solid #334155;
+            color: var(--text-muted);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .visit-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.7rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .card-islamic .visit-btn {
+            background-color: var(--accent-islamic);
+            color: #1E293B;
+        }
+        .card-islamic .visit-btn:hover { background-color: #B58450; color: #F8FAFC; }
+
+        .card-general .visit-btn {
+            background-color: #334155;
+            color: #7DD3FC;
+            border: 1px solid #475569;
+        }
+        .card-general .visit-btn:hover {
+            background-color: #475569;
+            color: #F8FAFC;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #0F172A;
+            margin-top: 5rem;
+        }
+
+        footer a {
+            color: #7DD3FC;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-title { font-size: 1.6rem; }
+            .academic-search-box { flex-direction: column; }
+            .search-submit-btn, .engine-select { padding: 0.8rem; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">Digital Library Hub || ফ্রি ই-বুক ডিরেক্টরি</div>
+        <div class="badge-owner">Admin: Taibul Islam</div>
+    </header>
+
+    <a href="https://taibulislam.weebly.com/" target="_blank" class="home-btn">মাইক্রোসফট অফিস (WORD, EXCEL, POWERPOINT) শিখতে ক্লিক করুন</a>
+        
+    <div class="search-container">
+        <div class="academic-search-box">
+            <select id="searchEngine" class="engine-select">
+                <option value="google">Google Scholar</option>
+                <option value="semantic">Semantic Scholar</option>
+                <option value="archive_org">Internet Archive Books</option>
+                <option value="core">CORE Academic (Open Access)</option>
+                <option value="base_search">BASE Search (Bielefeld)</option>
+                <option value="pubmed">PubMed (Medical)</option>
+                <option value="researchgate">ResearchGate</option>
+            </select>
+            <input type="text" id="searchQuery" class="search-bar" placeholder="Search papers, articles, or books...">
+            <button class="search-submit-btn" onclick="executeExternalSearch()">Search Papers</button>
+        </div>
+        
+        <div id="linkOutputArea" class="result-link-container"></div>
+
+        <div class="filter-section">
+            <div class="filter-row">
+                <span class="filter-label">Language Filter / ভাষা ফিল্টার</span>
+                <div class="filters">
+                    <button class="filter-btn active" id="lang-all" onclick="filterLanguage('all')">All Languages (সব বই)</button>
+                    <button class="filter-btn" id="lang-bangla" onclick="filterLanguage('bangla')">Bangla (বাংলা)</button>
+                    <button class="filter-btn" id="lang-english" onclick="filterLanguage('english')">English</button>
+                    <button class="filter-btn" id="lang-arabic" onclick="filterLanguage('arabic')">Arabic (العربية)</button>
+                </div>
+            </div>
+
+            <div class="filter-row">
+                <span class="filter-label">Library Type / লাইব্রেরি ক্যাটাগরি</span>
+                <div class="filters">
+                    <button class="filter-btn active" id="type-all" onclick="filterType('all')">All Libraries (সব ক্যাটাগরি)</button>
+                    <button class="filter-btn" id="type-islamic" onclick="filterType('islamic')">□ Islamic Only</button>
+                    <button class="filter-btn" id="type-general" onclick="filterType('general')">□ General & Academic</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="counter-banner" id="counterDisplay">Showing libraries...</div>
+        <div class="library-grid" id="libraryGrid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; All linked collections are systematically linked to official public distribution domains.</p>
+        <p class="copyright-text">&copy; তাইবুল ইসলাম। সর্বস্বত্ব সংরক্ষিত।</p>        
+        <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+    </footer>
+
+    <script>
+        const libraries = [
+            {
+                name: "Quraner Alo (কুরআনের আলো)",
+                lang: "bangla",
+                type: "islamic",
+                description: "বিশুদ্ধ ও নির্ভরযোগ্য ইসলামিক বাংলা বইয়ের অন্যতম প্রাচীন আর্কাইভ। এখানে তাফসীর, হাদীস সমগ্র, আকীদা ও সমসাময়িক বিষয়ের শত শত সঠিক ও নির্ভুল বই ফ্রি ডাউনলোড করা যায়।",
+                tags: ["হাদীস ও তাফসীর", "ইসলামিক আকীদা", "সহজ ডাউনলোড"],
+                url: "https://quraneralo.com"
+            },
+            {
+                name: "Bangladesh Islamic Foundation",
+                lang: "bangla",
+                type: "islamic",
+                description: "ইসলামিক ফাউন্ডেশন বাংলাদেশ-এর অফিসিয়াল ই-বুক পোর্টাল। সরকারিভাবে প্রকাশিত নির্ভরযোগ্য ইসলামিক বই, অনুবাদ ও সাময়িকীর ডিজিটাল সংস্করণ এখানে পাওয়া যায়।",
+                tags: ["সরকারি প্রকাশনা", "অনুবাদ", "ইসলামিক বই"],
+                url: "http://www.islamicfoundation.gov.bd/"
+            },
+            {
+                name: "Kalamullah",
+                lang: "english",
+                type: "islamic",
+                description: "A premium, clean digital library focused entirely on high-quality English Islamic PDFs. Contains translations of classical works, Islamic history, and audio files.",
+                tags: ["English Islamic Books", "History", "Scholarly PDF"],
+                url: "https://www.kalamullah.com"
+            },
+            {
+                name: "Shamela Library (المكتبة الشاملة)",
+                lang: "arabic",
+                type: "islamic",
+                description: "The ultimate search encyclopedia for Islamic and classical Arabic scriptures. Hosts an irreplaceable collection of thousands of Fiqh, Hadith, and history records.",
+                tags: ["البحث العلمي", "Hadith & Fiqh", "Encyclopedias", "classics"],
+                url: "https://shamela.ws"
+            },
+            {
+                name: "IslamHouse Bangla",
+                lang: "bangla",
+                type: "islamic",
+                description: "বিশ্বের বৃহত্তম বহুজাতিক ইসলামিক দাওয়াহ পোর্টাল। এখানে সম্পূর্ণ নির্ভরযোগ্য ইসলামী আলেমদের দ্বারা অনূদিত শত শত বাংলা ফ্রি ই-বুক, অডিও এবং লেকচার পাওয়া যায়।",
+                tags: ["সহীহ আকিদা", "ফতোয়া", "Multilingual Support", "education", "media"],
+                url: "https://islamhouse.com/bn/"
+            },
+            {
+                name: "Hadith BD (হাদিস বিডি)",
+                lang: "bangla",
+                type: "islamic",
+                description: "সরাসরি ওয়েব ব্রাউজারে বা পিডিএফ আকারে বুখারী, মুসলিমসহ প্রধান প্রধান সব হাদীস গ্রন্থ বাংলা অনুবাদ ও ব্যাখ্যাসহ পড়ার এবং ডাউনলোডের নির্ভরযোগ্য ইসলামিক সাইট।",
+                tags: ["হাদীস গ্রন্থ", "অনлайн সার্চ", "ইসলামিক রেফারেন্স"],
+                url: "http://www.hadithbd.com/"
+            },
+            {
+                name: "Sunnah.com Reference Portal",
+                lang: "english",
+                type: "islamic",
+                description: "The most widely used multilingual digital resource for exploring standard global collections of Hadith with advanced authentication and grading analysis.",
+                tags: ["Hadith Grading", "Reference Verification", "Academic Research"],
+                url: "https://sunnah.com"
+            },
+            {
+                name: "Islamic Online Library",
+                lang: "english",
+                type: "islamic",
+                description: "An organized repository tracking English research papers, legal declarations, and beautifully structured reference literature about the lifestyle of Islam.",
+                tags: ["Research Papers", "Comparative Religion", "Free PDFs"],
+                url: "https://www.islamiconlinelibrary.com/"
+            },
+            {
+                name: "Al-Mustafa Digital Library",
+                lang: "arabic",
+                type: "islamic",
+                description: "A comprehensive digital catalog hosting thousands of ancient Arabic volumes, reference files, and historical scans focusing heavily on traditional Islamic jurisprudence.",
+                tags: ["Jurisprudence", "Arabic Manuscripts", "Scholarly PDF"],
+                url: "http://www.al-mustafa.com/"
+            },
+            {
+                name: "Al-Waqfeya Library (المكتبة الوقفية)",
+                lang: "arabic",
+                type: "islamic",
+                description: "One of the most famous structured Arabic archives for scanning rare and verified classical Islamic heritage textbooks, manuscript indexes, and old prints.",
+                tags: ["مخطوطات", "Classical Heritage", "Rare Scans", "law"],
+                url: "https://waqfeya.com"
+            },
+            {
+                name: "Noor-Book (Waqfeya Alternative)",
+                lang: "arabic",
+                type: "islamic",
+                description: "One of the largest modern collaborative hubs for downloading translated legal treatises, classical Arabic textbooks, and cultural analysis items freely.",
+                tags: ["Modern PDFs", "Arabic Books", "Cultural Treatise"],
+                url: "https://www.noor-book.com/"
+            },
+            {
+                name: "National Virtual Library of Bangladesh",
+                lang: "bangla",
+                type: "general",
+                description: "বাংলাদেশ সরকারের জাতীয় ডিজিটাল গ্রন্থাগার প্রকল্প। এখানে শিক্ষামূলক কনটেন্ট, পাঠ্যপুস্তক এবং জাতীয় গুরুত্বপূর্ণ ইতিহাস ও আর্কাইভ সংগ্রহ বিনামূল্যে অ্যাক্সেস করা যায়।",
+                tags: ["জাতীয় আর্কাইভ", "শিক্ষা", "সরকারি পোর্টাল"],
+                url: "http://www.nvl.gov.bd/"
+            },
+            {
+                name: "eBanglaLibrary",
+                lang: "bangla",
+                type: "general",
+                description: "অনলাইনে সরাসরি ব্রাউজারেই বাংলা বই পড়ার চমৎকার সাইট। কবিতা, রেসিপি, ডিকশনারি এবং ক্লাসিক সাহিত্যের বিশাল কালেকশন রয়েছে ডাউনলোড ছাড়াই।",
+                tags: ["অনлайн রিডিং", "কবিতা সমগ্র", "অভিধান", "fiction", "novel", "drama"],
+                url: "https://www.ebanglalibrary.com"
+            },
+            {
+                name: "BDeBooks",
+                lang: "bangla",
+                type: "general",
+                description: "জনপ্রিয় বাংলা ই-বুক প্ল্যাটফর্ম। এখানে রবীন্দ্রনাথ, হুমায়ূন আহমেদ, জাফর ইকবাল সহ হাজারো লেখকের ২০,০০০+ বই বিনামূল্যে পড়া ও ডাউনলোড করা যায়।",
+                tags: ["উপন্যাস ও গল্প", "অনুবাদ সাহিত্য", "Bangla PDF", "poetry"],
+                url: "https://bdebooks.com"
+            },
+            {
+                name: "Amarboi (অমর বই)",
+                lang: "bangla",
+                type: "general",
+                description: "একটি বিশাল ও সমৃদ্ধ বাংলা টেক্সট আর্কাইভ। ফেলুদা, মাসুদ রানা, ক্লাসিক সাহিত্য এবং সমসাময়িক প্রকাশনীর স্ক্যানড পিডিএফ এর বড় সংগ্রহশালা।",
+                tags: ["সমগ্র কালেকশন", "গোয়েন্দা কাহিনী", "দুর্লভ বই", "history", "biography"],
+                url: "https://www.amarboi.com"
+            },
+            {
+                name: "Bengali Wikipedia Text Archive",
+                lang: "bangla",
+                type: "general",
+                description: "উইকিপিডিয়ার বাংলা সংস্করণের উন্মুক্ত তথ্য ভাণ্ডার। উইকিসোর্সের মাধ্যমে প্রাচীন ও আধুনিক বাংলা সাহিত্যের কপিরাইটহীন রচনাবলী সম্পূর্ণ টেক্সট আকারে পড়ার সুযোগ।",
+                tags: ["উন্মুক্ত পাঠাগার", "টেক্সট ডেটাবেজ", "কপিরাইট মুক্ত"],
+                url: "https://bn.wikisource.org"
+            },
+            {
+                name: "Granthagara (গ্রন্থাগার)",
+                lang: "bangla",
+                type: "general",
+                description: "ডিজিটাল বাংলা সাহিত্যের প্রাচীনতম উন্মুক্ত সংগ্রহশালা। শরৎচন্দ্র, বঙ্কিমচন্দ্র, এবং মাইকেল মধুসূদনের মত লেখকদের কপিরাইট মুক্ত বই এখানে সংরক্ষিত।",
+                tags: ["ক্লাসিক সাহিত্য", "কপিরাইট মুক্ত", "টেক্সট আর্কাইভ"],
+                url: "https://www.granthagara.com/"
+            },
+            {
+                name: "Project Gutenberg",
+                lang: "english",
+                type: "general",
+                description: "A database of over 70,000 free digital books, focusing entirely on classic world literature and public domain historical documents.",
+                tags: ["Classics", "Public Domain", "EPUB & PDF", "academic", "science"],
+                url: "https://www.gutenberg.org"
+            },
+            {
+                name: "Internet Archive Books",
+                lang: "english",
+                type: "general",
+                description: "An open library catalog managed by the Internet Archive. Offers instant access to millions of digitized books, media transcripts, and universal references.",
+                tags: ["Fiction", "Non-Fiction", "Borrow System", "research", "science", "audio"],
+                url: "https://archive.org/details/books"
+            },
+            {
+                name: "Directory of Open Access Books (DOAB)",
+                lang: "english",
+                type: "general",
+                description: "A global directory dedicated to providing full-text link indexing to peer-reviewed academic books and monographs published under Open Access parameters.",
+                tags: ["Monographs", "Peer Reviewed", "University Press"],
+                url: "https://www.doabooks.org/"
+            },
+            {
+                name: "LibriVox",
+                lang: "english",
+                type: "general",
+                description: "Free community-powered audio readings of public domain world literature gems spanning classic novels, academic structures, and diverse fantasy genres.",
+                tags: ["Audiobooks", "Classic Novels", "Acoustic Learning", "fiction", "fantasy"],
+                url: "https://librivox.org"
+            },
+            {
+                name: "Open Library",
+                lang: "english",
+                type: "general",
+                description: "An open, editable library catalog managed by the Internet Archive. Offers instant access to millions of digitized books in PDF and EPUB.",
+                tags: ["Fiction", "Non-Fiction", "Borrow System"],
+                url: "https://openlibrary.org"
+            },
+            {
+                name: "PDF Drive Portal",
+                lang: "english",
+                type: "general",
+                description: "A fast search-engine database for free files. Excellent for tracking down modern technical manuals, software tutorials, and self-help assets.",
+                tags: ["Manuals", "Tech Tutorials", "Direct Search"],
+                url: "https://www.pdfdrive.com"
+            },
+            {
+                name: "Google Books Archive",
+                lang: "english",
+                type: "general",
+                description: "The massive global library indexing platform where users can safely read preview sets or full digital scans of global print history.",
+                tags: ["Book Previews", "Global Prints", "Advanced Indexing"],
+                url: "https://books.google.com"
+            },
+            {
+                name: "PDF Books World",
+                lang: "english",
+                type: "general",
+                description: "High-quality digitized versions of legal public domain books, systematically reformatted with beautiful fonts and explicit chapter indexing.",
+                tags: ["High Quality Typography", "Essays", "Academic Classics"],
+                url: "https://www.pdfbooksworld.com"
+            },
+            {
+                name: "Bookboon Textbooks",
+                lang: "english",
+                type: "general",
+                description: "Focuses on providing premium, bite-sized textbooks, career guidebooks, and economics templates written by verified global university professors.",
+                tags: ["College Textbooks", "Business Guides", "STEM Projects"],
+                url: "https://bookboon.com"
+            },
+            {
+                name: "Arabic Collections Online (ACO)",
+                lang: "arabic",
+                type: "general",
+                description: "A major public digital library setup by NYU, Princeton, and Columbia universities. Provides legal public domain Arabic literature scans.",
+                tags: ["مكتبة عامة", "Literature Archives", "Academic Scans"],
+                url: "https://aco.dlib.nyu.edu/"
+            },
+            {
+                name: "Hindawi Foundation (مؤسسة هنداوي)",
+                lang: "arabic",
+                type: "general",
+                description: "One of the most prestigious modern non-profit libraries for Arabic books. Features thousands of masterfully edited translated and original works legally free.",
+                tags: ["كتب مترجمة", "Cultural Essays", "Premium PDFs", "philosophy", "science"],
+                url: "https://www.hindawi.org"
+            }
+        ];
+
+        let selectedLang = 'all';
+        let selectedType = 'all';
+
+        // Direct search routing logic 
+        function executeExternalSearch() {
+            const queryInput = document.getElementById('searchQuery');
+            const engineSelect = document.getElementById('searchEngine');
+            const resultArea = document.getElementById('linkOutputArea');
+
+            const queryText = queryInput.value.trim();
+            const engine = engineSelect.value;
+
+            if (!queryText) {
+                alert("Please enter a search term first.");
+                return;
+            }
+
+            let targetUrl = "";
+            let engineName = "";
+
+            switch(engine) {
+                case "google":
+                    targetUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(queryText)}`;
+                    engineName = "Google Scholar";
+                    break;
+                case "semantic":
+                    targetUrl = `https://www.semanticscholar.org/search?q=${encodeURIComponent(queryText)}`;
+                    engineName = "Semantic Scholar";
+                    break;
+                case "archive_org":
+                    targetUrl = `https://archive.org/details/books?and[]=${encodeURIComponent(queryText)}`;
+                    engineName = "Internet Archive Books";
+                    break;
+                case "core":
+                    targetUrl = `https://core.ac.uk/search?q=${encodeURIComponent(queryText)}`;
+                    engineName = "CORE Academic";
+                    break;
+                case "base_search":
+                    targetUrl = `https://www.base-search.net/Search/Results?lookfor=${encodeURIComponent(queryText)}`;
+                    engineName = "BASE Search";
+                    break;
+                case "pubmed":
+                    targetUrl = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(queryText)}`;
+                    engineName = "PubMed";
+                    break;
+                case "researchgate":
+                    targetUrl = `https://www.researchgate.net/search/publication?q=${encodeURIComponent(queryText)}`;
+                    engineName = "ResearchGate";
+                    break;
+            }
+            
+            window.open(targetUrl, '_blank');
+
+            resultArea.innerHTML = `
+                <a href="${targetUrl}" target="_blank" class="persistent-link-btn">
+                    □ Return to ${engineName} search results for: "${queryText}"
+                </a>
+            `;
+        }
+
+        document.getElementById('searchQuery').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                executeExternalSearch();
+            }
+        });
+
+        function renderGrid() {
+            const grid = document.getElementById('libraryGrid');
+            const counter = document.getElementById('counterDisplay');
+            grid.innerHTML = '';
+
+            const filtered = libraries.filter(item => {
+                const langMatch = selectedLang === 'all' || item.lang === selectedLang;
+                const typeMatch = selectedType === 'all' || item.type === selectedType;
+                return langMatch && typeMatch;
+            });
+
+            counter.innerText = `Showing ${filtered.length} of ${libraries.length} verified repositories available.`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 4rem; font-size: 1.1rem;">No digital library frameworks match your active filters.</p>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `lib-card card-${item.type}`;
+                card.innerHTML = `
+                    <div>
+                        <div class="lib-meta">
+                            <div class="badges-wrapper">
+                                ${item.type === 'islamic' ? '<span class="type-badge">□ Islamic</span>' : ''}
+                                <span class="lang-badge lang-${item.lang}">${item.lang}</span>
+                            </div>
+                        </div>
+                        <div class="lib-name">${item.name}</div>
+                        <p class="lib-desc">${item.description}</p>
+                        <div class="card-meta-tags">
+                            ${item.tags.map(t => `<span class="meta-tag">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                    <a href="${item.url}" target="_blank" class="visit-btn">Open Repository</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterLanguage(lang) {
+            selectedLang = lang;
+            document.querySelectorAll('[id^="lang-"]').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            renderGrid();
+        }
+
+        function filterType(type) {
+            selectedType = type;
+            document.querySelectorAll('[id^="type-"]').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`type-${type}`).classList.add('active');
+            renderGrid();
+        }
+
+        renderGrid();
+    </script>
+</body>
+</html>

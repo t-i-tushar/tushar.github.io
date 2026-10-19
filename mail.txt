@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Outlook vs Gmail Full Course by Taibul Islam</title>
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  /* basic resets */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #f4f7f6;
+    color: #1a2a26;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  /* navigation */
+  .custom-nav {
+    background-color: #0d231f;
+    border-bottom: 2px solid #d4af37;
+    padding: 15px;
+    text-align: center;
+  }
+  .custom-nav .logo {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .custom-nav .logo span {
+    color: #d4af37;
+    font-size: 12px;
+  }
+  .custom-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  /* hero section */
+  .custom-hero {
+    background-color: #0d231f;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .custom-hero .pill {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    padding: 4px 12px;
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .custom-hero .hero-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .custom-hero .hero-title em {
+    font-style: normal;
+    color: #cbd5e1;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .custom-hero p {
+    color: #94a3b8;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    font-size: 12px;
+  }
+  .custom-hero .btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #0d231f;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  /* basic sections */
+  .custom-section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .custom-section .tag {
+    color: #173f37;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .custom-section .section-title {
+    color: #0d231f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .custom-section .desc {
+    color: #4a5568;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  /* list formatting for modules */
+  .module-block {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  .module-block .module-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0d231f;
+    margin-bottom: 5px;
+  }
+  .module-block p {
+    font-size: 12px;
+    color: #4a5568;
+  }
+  .module-block ul {
+    margin-top: 8px;
+    padding-left: 20px;
+  }
+  .module-block li {
+    font-size: 12px;
+    color: #4a5568;
+  }
+
+  /* robust table formatting for shortcuts/comparisons */
+  .shortcut-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+  }
+  .shortcut-table th, .shortcut-table td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .shortcut-table th {
+    background-color: #edf2f1;
+    color: #0d231f;
+    font-weight: bold;
+  }
+  .shortcut-table kbd {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #0d231f;
+    border-radius: 3px;
+  }
+
+  /* footer */
+  .custom-footer {
+    background-color: #091715;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 12px;
+    border-top: 2px solid #d4af37;
+  }
+  .custom-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="custom-nav">
+    <div class="logo">OUTLOOK & GMAIL <span> by তাইবুল ইসলাম</span></div>
+    <a href="#lessons">পাঠ্যসূচী</a> | 
+    <a href="#comparison">তুলনামূলক বিশ্লেষণ</a> | 
+    <a href="#shortcuts">শর্টকাটসমূহ</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="custom-hero">
+    <div class="pill">কমিউনিকেশন মাস্টারক্লাস</div>
+    <p class="hero-title">আউটলুক এবং জিমেইল এর খুঁটিনাটি ও তুলনামূলক ব্যবহার <em>পেশাদার করপোরেট ইমেইল গাইড</em></p>
+    <p>অফিশিয়াল যোগাযোগকে আরও গোছানো এবং দ্রুত করতে মাইক্রোসফট আউটলুক এবং গুগল জিমেইলের অ্যাডভান্সড সেটিংসের তুলনামূলক লার্নিং মডিউল।</p>
+    <a href="#lessons" class="btn">কোর্স শুরু করুন</a>
+  </div>
+
+  <!-- LESSONS SECTION -->
+  <div class="custom-section" id="lessons">
+    <div class="tag">লার্নিং মডিউল</div>
+    <p class="section-title">প্রধান পাঠসমূহ এবং বিষয়বস্তু</p>
+    <div class="desc">ইমেইল ম্যানেজমেন্ট, ক্যালেন্ডার শিডিউলিং এবং প্রাতিষ্ঠানিক প্রজেক্ট ভিত্তিক গাইডলাইন:</div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০১: ইন্টারফেস ও ইমেইল অর্গানাইজেশন (আউটলুক বনাম জিমেইল)</p>
+      <p>উভয় প্ল্যাটফর্মের ইনবক্স সাজানো, লেবেল বনাম ফোল্ডার স্ট্রাকচারের বাস্তব পার্থক্য এবং সুবিধা।</p>
+      <ul>
+        <li>আউটলুক ফোল্ডার: ক্যাটাগরি এবং ফোল্ডার তৈরি করে ক্লায়েন্ট ভিত্তিক মেইল আলাদা করার নিয়ম।</li>
+        <li>জিমেইল লেবেল: একটি মেইলকে একাধিক লেবেলে ট্যাগ করার স্মার্ট গুগলিং সিস্টেম।</li>
+        <li>ইনবক্স ফিল্টারিং: আউটলুকের 'Focused Inbox' এবং জিমেইলের 'Tabs' (Primary/Social) ম্যানেজমেন্ট।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০২: অটোমেশন, রুলস এবং ফিল্টার সেটিংস (বিস্তারিত)</p>
+      <p>ম্যানুয়ালি মেইল চেক না করে স্বয়ংক্রিয়ভাবে ইনবক্স পরিষ্কার রাখার অ্যাডভান্সড রুলস কাস্টমাইজেশন।</p>
+      <ul>
+        <li>আউটলুক রুলস (Rules): নির্দিষ্ট ইমেইল এড্রেস থেকে মেইল আসলে তা অটোমেটিক নির্দিষ্ট ফোল্ডারে পাঠানো।</li>
+        <li>জিমেইল ফিল্টার (Filters): কি-ওয়ার্ডের ওপর ভিত্তি করে ইনবক্স স্কিপ করে মেইল সরাসরি আর্কাইভ বা ডিলিট করা।</li>
+        <li>অটো-রিপ্লাই: ছুটি বা অনুপস্থিতিকালীন আউট অব অফিস (Out of Office) মেসেজ সেট করা।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৩: ক্যালেন্ডার এবং মিটিং শিডিউলিং (বিস্তারিত)</p>
+      <p>করপোরেট মিটিং বা অ্যাপয়েন্টমেন্ট বুকিংয়ের জন্য টিম ক্যালেন্ডার শেয়ারিং ও সিঙ্ক করার নিয়মাবলি।</p>
+      <ul>
+        <li>মিটিং ইনভাইটেশন: আউটলুক ও জিমেইল থেকে একসাথে একাধিক টিম মেম্বারকে ক্যালেন্ডার ইভেন্ট পাঠানো।</li>
+        <li>প্ল্যাটফর্ম ইন্টিগ্রেশন: আউটলুকে মাইক্রোসফট টিমস (Teams) এবং জিমেইলে গুগল মিট (Meet) সিঙ্ক্রোনাইজেশন।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৪: সিগনেচার ও ইমেইল ফরম্যাটিং (বিস্তারিত)</p>
+      <p>পেশাদার করপোরেট ইমেইল বডি ড্রাফটিং এবং ডাইনামিক ইমেজ সিগনেচার ব্যবহারের নিয়ম।</p>
+      <ul>
+        <li>এইচটিএমএল সিগনেচার: নিজস্ব নাম, পদবি, লোগো এবং সোশ্যাল মিডিয়া আইকন লিংকসহ সিগনেচার তৈরি।</li>
+        <li>কুইক পার্টস ও টেমপ্লেট: বারবার একই ইমেইল টাইপ না করে রেডিমেড ইমেইল টেমপ্লেট সেভ করে রাখার ট্রিকস।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE SECTION -->
+  <div class="custom-section" id="comparison">
+    <div class="tag">ফিচার তুলনা</div>
+    <p class="section-title">পেশাদার কাজের ক্ষেত্রে আউটলুক বনাম জিমেইল</p>
+    <div class="desc">আপনার কর্মক্ষেত্রের ধরণ অনুযায়ী কোন প্ল্যাটফর্মটি বেশি উপযোগী তা একনজরে দেখে নিন:</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>ফিচার বা বৈশিষ্ট্য</th>
+          <th>মাইক্রোসফট আউটলুক (Outlook)</th>
+          <th>গুগল জিমেইল (Gmail)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>মেইল ম্যানেজমেন্ট</strong></td>
+          <td>ট্রি-ভিউ ফোল্ডার স্ট্রাকচার (Traditional Folder System)</td>
+          <td>ট্যাগ বা লেবেল সিস্টেম (Multi-Label Tagging)</td>
+        </tr>
+        <tr>
+          <td><strong>অফলাইন কার্যকারিতা</strong></td>
+          <td>ডেস্কটপ অ্যাপের মাধ্যমে সম্পূর্ণ অফলাইন এক্সেস ও ড্রাফটিং</td>
+          <td>ক্রোম ব্রাউজার এক্সটেনশন বা অফলাইন মোড নির্ভর</td>
+        </tr>
+        <tr>
+          <td><strong>ভিডিও কনফারেন্স</strong></td>
+          <td>Microsoft Teams এর সাথে সরাসরি যুক্ত</td>
+          <td>Google Meet এর সাথে সরাসরি ইন্টিগ্রেটেড</td>
+        </tr>
+        <tr>
+          <td><strong>স্টোরেজ পলিসি</strong></td>
+          <td>এন্টারপ্রাইজ প্ল্যানে বিশাল মেইল ক্লাউড আর্কাইভিং সুবিধা</td>
+          <td>গুগল ড্রাইভ ও গুগল ফটোর সাথে যৌথ ১৫ জিবি ফ্রি স্টোরেজ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHORTCUTS SECTION -->
+  <div class="custom-section" id="shortcuts">
+    <div class="tag">গতিশীল কীবোর্ড কমান্ড</div>
+    <p class="section-title">প্রয়োজনীয় ইমেইল শর্টকাটসমূহ (উভয় প্ল্যাটফর্ম)</p>
+    <div class="desc">মাউসের ব্যবহার কমিয়ে দ্রুত ইনবক্স ট্র্যাকিং এবং মেইল কম্পোজ করার সেরা কমান্ড ট্রিকস।</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>কমান্ড অ্যাকশন</th>
+          <th>মাইক্রোসফট আউটলুক</th>
+          <th>গুগল জিমেইল (Shortcuts On)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>নতুন মেইল তৈরি (Compose)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd></td>
+          <td><kbd>C</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>ইমেইল সেন্ড করা (Send)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>মেইল রিপ্লাই (Reply)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>R</kbd></td>
+          <td><kbd>R</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>সবাইকে রিপ্লাই (Reply All)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+          <td><kbd>A</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>মেইল ফরোয়ার্ড (Forward)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+          <td><kbd>F</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>মেইল ডিলিট করা (Delete)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+          <td><kbd>#</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>মেইল সার্চ করা (Search)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+          <td><kbd>/</kbd></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="custom-footer">
+    <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+    <p style="margin-top: 8px; color: #a0aec0; font-size: 12px;">&copy; তাইবুল ইসলাম। সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+
+</body>
+</html>

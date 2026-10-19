@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>তাইবুল ইসলাম</title>
+
+<!-- গুগল ফন্টস (Hind Siliguri) এর সঠিক লিংক যুক্ত করা হয়েছে -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  /* basic resets */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #f4f7f6;
+    color: #1a2a26;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 13px; /* একটু বাড়িয়ে ১৪ করা হলো পড়ার সুবিধার জন্য */
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .home-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* Main Welcome Title */
+  .welcome-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0d231f;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  /* Two Column Layout Block */
+  .main-grid {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .left-panel {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .right-panel {
+    width: 100%;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Left Course Card Elements */
+  .course-intro {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 20px;
+  }
+
+  .button-group {
+    margin-top: 15px;
+  }
+
+  /* Left Panel Buttons */
+  .home-btn {
+    display: block;
+    width: 100%;
+    background-color: #0d231f;
+    color: #ffffff;
+    text-align: center;
+    padding: 11px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 4px;
+    border-bottom: 2px solid #d4af37;
+    /* অ্যানিমেশন সফট করার জন্য ট্রানজিশন */
+    transition: background-color 0.2s ease, color 0.2s ease;
+  } /* <-- এই ব্র্যাকেটটি কোডে মিসিং ছিল, যা ফিক্স করা হয়েছে */
+
+  .home-btn:hover {
+    background-color: #e2ece9;
+    color: #0d231f;            
+  }
+
+  /* Right Side Author Card Elements */
+  .author-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d4af37;
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  .author-card .card-tag {
+    color: #173f37;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .author-card p {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 20px;
+  }
+
+  /* Rokomari Button - Soft Crimson Tones */
+  .rokomari-btn {
+    display: block;
+    width: 100%;
+    background-color: #e11d48;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 12px; /* স্পেসিং ঠিক করার জন্য */
+    transition: background-color 0.2s ease;
+  }
+  
+  .rokomari-btn:hover {
+    background-color: #be123c;
+  }
+
+  /* Footer and Copyright Styling */
+  .custom-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    color: #718096;
+    font-size: 13px;
+  }
+
+  .custom-footer a {
+    color: #0d231f;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .custom-footer a:hover {
+    color: #d4af37;
+  }
+
+  .copyright-text {
+    margin-top: 8px;
+    color: #a0aec0;
+    font-size: 12px;
+  }
+
+  /* RESPONSIVE LAYOUT FOR DESKTOP SCREENS */
+  @media (min-width: 650px) {
+    .left-panel {
+      width: 48%;
+      float: left;
+      padding-right: 2%;
+      margin-bottom: 0;
+    }
+    .right-panel {
+      width: 50%;
+      float: right;
+    }
+    .rokomari-btn {
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    .author-card .home-btn {
+      display: inline-block;
+      width: auto;
+      padding: 11px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="home-container">
+    <!-- Main Header -->
+    <marquee direction="left" scrollamount="10">
+    <p class="welcome-title"><b>তাইবুল ইসলাম-এর ব্যক্তিগত পাতায় সবাইকে স্বাগতম</b></p>
+    </marquee>    
+
+    <!-- Two-Column Grid Setup -->
+    <div class="main-grid clearfix">
+      
+           <!-- Right side: Rokomari Author Profile Links -->
+      <div class="left-panel">
+        <div class="author-card">
+          <p class="card-tag"><b>লেখক প্রোফাইল</b></p>
+          <p>
+            সাহিত্য, সৃজনশীলতা ও ডিজিটাল লিটারেসি নিয়ে তাইবুল ইসলামের অফিশিয়াল ওয়েবসাইট। নতুন কিছু শিখতে স্ক্রোল করুন, আর লেখকের প্রকাশিত বইসমূহ রকমারি থেকে সরাসরি সংগ্রহ করতে নিচের লিংকে ভিজিট করুন।
+          </p>
+          <a href="https://www.rokomari.com/book/author/135870/taibul-islam" target="_blank" class="rokomari-btn">রকমারিতে প্রকাশিত বইসমূহ</a>
+          <p></p>
+          <a href="https://taibulislam.weebly.com/k.html" target="_blank" class="home-btn">অনলাইনে পড়ুন-Free: কাঠপোড়াদের দেশে</a>
+          <p></p>
+          <p><b>অনলাইনে প্রকাশিত লেখা পড়ুন: </b> </p>
+          <p></p>
+          <a href="https://www.bangla-kobita.com/786/" target="_blank" class="rokomari-btn">বাংলা কবিতা – Bangla Kobita</a>
+         <p></p>
+          <a href="https://www.tarunyo.com/786/" target="_blank" class="rokomari-btn">তারুণ্য</a>
+   
+       </div>
+      </div>
+ 
+<!-- Left side: Courses -->
+      <div class="right-panel">
+        <p class="course-intro">
+          <strong>মাইক্রোসফট অফিস (WORD, EXCEL, POWERPOINT)</strong><br>
+          একদম শুরু থেকে নিখুঁতভাবে শিখতে চান? নিচের বাটনগুলোতে ক্লিক করে আপনার কাঙ্ক্ষিত কোর্সটি বেছে নিন ও বিস্তারিত পাঠ্যসূচী দেখে নিন।
+        </p>
+        
+        <div class="button-group">
+          <a href="https://taibulislam.weebly.com/word.html" target="_blank" class="home-btn">WORD</a>
+          <a href="https://taibulislam.weebly.com/excel.html" target="_blank" class="home-btn">EXCEL</a>
+          <a href="https://taibulislam.weebly.com/ppt.html" target="_blank" class="home-btn">POWERPOINT</a>
+          <a href="https://taibulislam.weebly.com/mail.html" target="_blank" class="home-btn">OUTLOOK & GMAIL</a>
+          <a href="https://taibulislam.weebly.com/vcall.html" target="_blank" class="home-btn">TEAMS & MEET</a>
+          <a href="https://taibulislam.weebly.com/library.html" target="_blank" class="rokomari-btn"> Digital Library Hub || ফ্রি ই-বুক ডিরেক্টরি </a>        
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bar with Contact and Copyright -->
+    <div class="custom-footer">
+      <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+      <p class="copyright-text">&copy; তাইবুল ইসলাম। সর্বস্বত্ব সংরক্ষিত।</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Teams vs Google Meet Full Course by Taibul Islam</title>
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  /* basic resets */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #f4f7f6;
+    color: #1a2a26;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  /* navigation */
+  .custom-nav {
+    background-color: #0d231f;
+    border-bottom: 2px solid #d4af37;
+    padding: 15px;
+    text-align: center;
+  }
+  .custom-nav .logo {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .custom-nav .logo span {
+    color: #d4af37;
+    font-size: 12px;
+  }
+  .custom-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  /* hero section */
+  .custom-hero {
+    background-color: #0d231f;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .custom-hero .pill {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    padding: 4px 12px;
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .custom-hero .hero-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .custom-hero .hero-title em {
+    font-style: normal;
+    color: #cbd5e1;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .custom-hero p {
+    color: #94a3b8;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    font-size: 12px;
+  }
+  .custom-hero .btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #0d231f;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  /* basic sections */
+  .custom-section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .custom-section .tag {
+    color: #173f37;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .custom-section .section-title {
+    color: #0d231f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .custom-section .desc {
+    color: #4a5568;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  /* list formatting for modules */
+  .module-block {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  .module-block .module-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0d231f;
+    margin-bottom: 5px;
+  }
+  .module-block p {
+    font-size: 12px;
+    color: #4a5568;
+  }
+  .module-block ul {
+    margin-top: 8px;
+    padding-left: 20px;
+  }
+  .module-block li {
+    font-size: 12px;
+    color: #4a5568;
+  }
+
+  /* robust table formatting for shortcuts/comparisons */
+  .shortcut-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+  }
+  .shortcut-table th, .shortcut-table td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .shortcut-table th {
+    background-color: #edf2f1;
+    color: #0d231f;
+    font-weight: bold;
+  }
+  .shortcut-table kbd {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #0d231f;
+    border-radius: 3px;
+  }
+
+  /* footer */
+  .custom-footer {
+    background-color: #091715;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 12px;
+    border-top: 2px solid #d4af37;
+  }
+  .custom-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="custom-nav">
+    <div class="logo">TEAMS & MEET <span> by তাইবুল ইসলাম</span></div>
+    <a href="#lessons">পাঠ্যসূচী</a> | 
+    <a href="#comparison">তুলনামূলক বিশ্লেষণ</a> | 
+    <a href="#shortcuts">শর্টকাটসমূহ</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="custom-hero">
+    <div class="pill">ভার্চুয়াল মিটিং মাস্টারক্লাস</div>
+    <p class="hero-title">মাইক্রোসফট টিমস এবং গুগল মিট এর পেশাদার ব্যবহার <em>অনলাইন কলাবোরেশন গাইড</em></p>
+    <p>অনলাইন মিটিং পরিচালনা, স্ক্রিন শেয়ারিং, রিমোট টিম ম্যানেজমেন্ট এবং দূরবর্তী প্রাতিষ্ঠানিক যোগাযোগকে নিখুঁত করার প্রফেশনাল লার্নিং মডিউল।</p>
+    <a href="#lessons" class="btn">কোর্স শুরু করুন</a>
+  </div>
+
+  <!-- LESSONS SECTION -->
+  <div class="custom-section" id="lessons">
+    <div class="tag">লার্নিং মডিউল</div>
+    <p class="section-title">প্রধান পাঠসমূহ এবং বিষয়বস্তু</p>
+    <div class="desc">অনলাইন কনফারেন্স কন্ট্রোল, ব্যাকগ্রাউন্ড কাস্টমাইজেশন এবং লাইভ প্রজেক্ট কো-অর্ডিনেশন গাইডলাইন:</div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০১: মিটিং ইনস্ট্যান্ট সেটআপ ও ইনভাইটেশন লিংক</p>
+      <p>খুব দ্রুত নতুন ভার্চুয়াল রুম তৈরি করা এবং অংশগ্রহণকারীদের জন্য অ্যাক্সেস পারমিশন কন্ট্রোল করার নিয়মাবলি।</p>
+      <ul>
+        <li>টিমস চ্যানেল স্পেস: মাইক্রোসফট টিমসে স্থায়ী টিম চ্যানেল খুলে তার ভেতর মিটিং কল করার পদ্ধতি।</li>
+        <li>মিট কোড জেনারেশন: গুগল মিট থেকে মাত্র এক ক্লিকে ইনস্ট্যান্ট মিটিং কোড তৈরি করে শেয়ার করার ট্রিকস।</li>
+        <li>লবি ম্যানেজমেন্ট: অনুমতি ছাড়া অপরিচিত ব্যক্তির প্রবেশ ঠেকাতে 'Admit' বা 'Lobby Enforce' রুলস সেটিংস।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০২: অ্যাডভান্সড স্ক্রিন শেয়ারিং ও প্রেজেন্টেশন মোড</p>
+      <p>মিটিং চলাকালীন নিজের পিসির উইন্ডো, পাওয়ারপয়েন্ট স্লাইড বা মাল্টিমিডিয়া সাউন্ড শেয়ার করার পেশাদার কৌশল।</p>
+      <ul>
+        <li>পাওয়ারপয়েন্ট লাইভ: টিমস অ্যাপের ভেতর স্লাইড লোড করে প্রেজেন্টার ভিউসহ পাওয়ারপয়েন্ট দেখানোর নিয়ম।</li>
+        <li>ট্যাব বনাম ফুল স্ক্রিন: গুগল মিটে ভিডিও ও অডিও সাউন্ড ভালো কোয়ালিটিতে দেখানোর জন্য স্পেসিফিক ক্রোম ট্যাব শেয়ারিং।</li>
+        <li>অ্যানোটেশন টুলস: স্ক্রিন শেয়ার করা অবস্থায় লাইভ স্ক্রিনের ওপর লাল বা নীল কালিতে মার্ক করে বোঝানোর টেকনিক।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৩: ব্রেকআউট রুম ও টিম কলাবোরেশন</p>
+      <p>একটি বড় মিটিংয়ের ভেতর ছোট ছোট সাব-গ্রুপ তৈরি করে গ্রুপ ওয়ার্ক বা ওয়ার্কশপ অ্যাসাইন করার আধুনিক গাইড।</p>
+      <ul>
+        <li>ব্রেকআউট রুমস: মিটিংয়ের ৫০ জন মেম্বারকে স্বয়ংক্রিয়ভাবে আলাদা ৫টি রুমে ভাগ করে আলোচনার সুযোগ দেওয়া।</li>
+        <li>ইন-মিটিং চ্যাট ও ফাইল: লাইভ কল চলাকালীন ওয়ানড্রাইভ বা গুগল ড্রাইভ ফাইল শেয়ারিং ও এডিটিং পারমিশন।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৪: রেকর্ডিং, ট্রান্সক্রিপ্ট এবং ব্যাকগ্রাউন্ড সেটিংস</p>
+      <p>মিটিংয়ের আলোচনা ভবিষ্যতের জন্য রেকর্ড করা এবং লাইভ সাবটাইটেল বা ট্রান্সক্রিপ্ট অন করার নিয়ম।</p>
+      <ul>
+        <li>লাইভ ট্রান্সক্রিপশন: স্পিকারের ইংরেজি কথা স্বয়ংক্রিয়ভাবে টেক্সট আকারে পাশে রেকর্ড করে রাখার সেটিংস।</li>
+        <li>স্টুডিও ইফেক্টস: বাসার ভেতরের ব্যাকগ্রাউন্ড আড়াল করতে ব্লার (Blur) বা কাস্টম অফিস ব্যাকগ্রাউন্ড ইমেজ যুক্ত করা।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE SECTION -->
+  <div class="custom-section" id="comparison">
+    <div class="tag">প্লাটফর্ম তুলনা</div>
+    <p class="section-title">পেশাদার অনলাইন কনফারেন্সে টিমস বনাম গুগল মিট</p>
+    <div class="desc">আপনার প্রাতিষ্ঠানিক কাজের ধরণ এবং পিসির কনফিগারেশন অনুযায়ী সঠিক সফটওয়্যার বেছে নিন:</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>ফিচার বা বৈশিষ্ট্য</th>
+          <th>মাইক্রোসফট টিমস (Microsoft Teams)</th>
+          <th>গুগল মিট (Google Meet)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ইনস্টলেশন পলিসি</strong></td>
+          <td>ভারী ডেস্কটপ সফটওয়্যার (পূর্ণ ফিচারের জন্য অ্যাপ ইনস্টল করা আবশ্যক)</td>
+          <td>সম্পূর্ণ ব্রাউজার নির্ভর (কোনো সফটওয়্যার ইনস্টল ছাড়াই লিংকে কাজ করে)</td>
+        </tr>
+        <tr>
+          <td><strong>ইকোসিস্টেম কানেকশন</strong></td>
+          <td>Office 365, Word, Excel, SharePoint এর সাথে টাইটলি ইন্টিগ্রেটেড</td>
+          <td>Google Drive, Docs, Google Calendar এর সাথে সরাসরি সিঙ্কড</td>
+        </tr>
+        <tr>
+          <td><strong>টিম চ্যাট ও ফোল্ডার</strong></td>
+          <td>মিটিং ছাড়াও পার্মানেন্ট গ্রুপ চ্যাট এবং ফাইল স্টোরেজ চ্যানেল থাকে</td>
+          <td>প্রধানত শুধুমাত্র কলিং ফোকাসড, কল শেষে চ্যাট হিস্ট্রি সেভ হয় না</td>
+        </tr>
+        <tr>
+          <td><strong>রিসোর্স ব্যবহার</strong></td>
+          <td>RAM এবং প্রসেসরের পাওয়ার তুলনামূলক বেশি প্রয়োজন হয়</td>
+          <td>হালকা কোডের ব্রাউজার ট্যাব হওয়ায় কম কনফিগারেশনেও স্মুথ চলে</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHORTCUTS SECTION -->
+  <div class="custom-section" id="shortcuts">
+    <div class="tag">গতিশীল মিউট/ক্যামেরা কমান্ড</div>
+    <p class="section-title">জরুরি মিটিং শর্টকাটসমূহ (উভয় প্ল্যাটফর্ম)</p>
+    <div class="desc">অনলাইন ক্লাসে বা অফিশিয়াল কলে মাউস না খুঁজে কীবোর্ড দিয়ে দ্রুত অডিও-ভিডিও কন্ট্রোল করার কমান্ড:</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>কমান্ড অ্যাকশন</th>
+          <th>মাইক্রোসফট টিমস উইন্ডোজ কমান্ড</th>
+          <th>গুগল মিট ব্রাউজার কমান্ড</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>মাইক্রোফোন মিউট/আনমিউট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd></td>
+          <td><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>ক্যামেরা অন/অফ (Video)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></td>
+          <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>হাত তোলা (Raise Hand)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>H</kbd></td>
+        </tr>
+        <tr>
+          <td><strong>স্ক্রিন শেয়ারিং প্যানেল</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd></td>
+          <td>মাউস ক্লিক মেনু নির্ভর</td>
+        </tr>
+        <tr>
+          <td><strong>কল কেটে দেওয়া (Leave)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd></td>
+          <td><kbd>Ctrl</kbd> + <kbd>W</kbd> (ট্যাব ক্লোজ)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="custom-footer">
+    <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+    <p style="margin-top: 8px; color: #a0aec0; font-size: 12px;">&copy; তাইবুল ইসলাম। সর্বস্বত্ব সংরক্ষিত।</p>
+  </div>
+
+</body>
+</html>

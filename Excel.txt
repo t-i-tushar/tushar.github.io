@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Microsoft Excel Full Course by Taibul Islam</title>
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  /* basic resets */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #f4f7f6;
+    color: #1a2a26;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  /* navigation */
+  .custom-nav {
+    background-color: #0d231f;
+    border-bottom: 2px solid #d4af37;
+    padding: 15px;
+    text-align: center;
+  }
+  .custom-nav .logo {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .custom-nav .logo span {
+    color: #d4af37;
+    font-size: 12px;
+  }
+  .custom-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  /* hero section */
+  .custom-hero {
+    background-color: #0d231f;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .custom-hero .pill {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    padding: 4px 12px;
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .custom-hero .hero-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .custom-hero .hero-title em {
+    font-style: normal;
+    color: #cbd5e1;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .custom-hero p {
+    color: #94a3b8;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    font-size: 12px;
+  }
+  .custom-hero .btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #0d231f;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  /* basic sections */
+  .custom-section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .custom-section .tag {
+    color: #173f37;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .custom-section .section-title {
+    color: #0d231f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .custom-section .desc {
+    color: #4a5568;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  /* list formatting for modules */
+  .module-block {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  .module-block .module-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0d231f;
+    margin-bottom: 5px;
+  }
+  .module-block p {
+    font-size: 12px;
+    color: #4a5568;
+  }
+  .module-block ul {
+    margin-top: 8px;
+    padding-left: 20px;
+  }
+  .module-block li {
+    font-size: 12px;
+    color: #4a5568;
+  }
+
+  /* robust table formatting for shortcuts */
+  .shortcut-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+  }
+  .shortcut-table th, .shortcut-table td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .shortcut-table th {
+    background-color: #edf2f1;
+    color: #0d231f;
+    font-weight: bold;
+  }
+  .shortcut-table kbd {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #0d231f;
+    border-radius: 3px;
+  }
+
+  /* footer */
+  .custom-footer {
+    background-color: #091715;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 12px;
+    border-top: 2px solid #d4af37;
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="custom-nav">
+    <div class="logo">EXCEL <span>by তাইবুল ইসলাম</span></div>
+    <a href="#lessons">পাঠ্যসূচী</a> | 
+    <a href="#shortcuts">শর্টকাটসমূহ</a> | 
+    <a href="#features">সুবিধাসমূহ</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="custom-hero">
+    <div class="pill">মাইক্রোসফট এক্সেল মাস্টারক্লাস</div>
+    <p class="hero-title">এমএস এক্সেল এর খুঁটিনাটি শিখুন জিরো থেকে অ্যাডভান্সড লেভেলে <em>পেশাদার ডেটা অ্যানালাইসিস গাইড</em></p>
+    <p>সহজ বাংলা ভাষায় সাজানো এই কোর্সটি আপনাকে যেকোনো প্রাতিষ্ঠানিক হিসাব-নিকাশ, বাজেট রিপোর্টিং, এবং জটিল ডেটা ফরমেটিং এ দক্ষ করে তুলবে।</p>
+    <a href="#lessons" class="btn">কোর্স শুরু করুন</a>
+  </div>
+
+  <!-- LESSONS SECTION -->
+  <div class="custom-section" id="lessons">
+    <div class="tag">লার্নিং মডিউল</div>
+    <p class="section-title">প্রধান পাঠসমূহ এবং বিষয়বস্তু</p>
+    <div class="desc">ধাপ অনুসারে সাজানো প্রতিটি ক্লাসের গভীর বিশ্লেষণ এবং ব্যবহারিক প্রজেক্ট গাইডলাইন:</div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০১: ইন্টারফেস এবং বেসিক ফর্মুলা (বিস্তারিত)</p>
+      <p>এক্সেল রিবন কাস্টমাইজেশন, সেল রেফারেন্সিং এবং গাণিতিক অপারেটরের সঠিক ব্যবহারের নিয়মাবলি।</p>
+      <ul>
+        <li>সেল ম্যানেজমেন্ট: রিলেটিভ, অ্যাবসোলিউট ($ চিহ্ন) এবং মিক্সড সেল রেফারেন্সের ব্যবহার।</li>
+        <li>প্রাথমিক গাণিতিক সূত্র: SUM, AVERAGE, COUNT, MAX, এবং MIN ফর্মুলার বাস্তব প্রয়োগ।</li>
+        <li>ডেটা এন্ট্রি ট্রিকস: অটো-ফিল হ্যান্ডেল এবং ফ্ল্যাশ ফিল ব্যবহার করে চোখের পলকে সিরিজ ডেটা তৈরি।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০২: লজিক্যাল ফাংশন ও ডেটা ভ্যালিডেশন (বিস্তারিত)</p>
+      <p>শর্তসাপেক্ষে ডেটা গণনা এবং ইনপুট ফিল্ডে ভুল এড়ানোর জন্য ভ্যালিডেশন রুলস তৈরির কৌশল।</p>
+      <ul>
+        <li>লজিক্যাল সূত্র: IF, Nested IF, AND, OR এবং IFERROR ফাংশন ব্যবহার করে স্বয়ংক্রিয় গ্রেড শীট তৈরি।</li>
+        <li>শর্তযুক্ত গণনা: নির্দিষ্ট ক্রাইটেরিয়ার ভিত্তিতে যোগ বা গণনার জন্য SUMIF এবং COUNTIF এর ব্যবহার।</li>
+        <li>ডেটা ভ্যালিডেশন: ড্রপ-ডাউন লিস্ট তৈরি করা এবং নির্দিষ্ট সীমার বাইরে ভুল ডেটা এন্ট্রি ব্লক করা।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৩: অ্যাডভান্সড লুকআপ ফাংশন (বিস্তারিত)</p>
+      <p>হাজার হাজার ডেটার ভেতর থেকে নির্দিষ্ট তথ্য সেকেন্ডের মধ্যে খুঁজে বের করার পেশাদার পদ্ধতি।</p>
+      <ul>
+        <li>ভি-লুকআপ ও এইচ-লুকআপ: VLOOKUP এবং HLOOKUP এর মাধ্যমে অন্য শিট থেকে ডেটা ম্যাচিং।</li>
+        <li>এক্স-লুকআপ (XLOOKUP): আধুনিক এবং নমনীয় XLOOKUP ফাংশনের ব্যবহার যা বাম ও ডান উভয় দিকে কাজ করে।</li>
+        <li>ইনডেক্স ও ম্যাচ: জটিল ডেটাসেটের জন্য INDEX এবং MATCH ফাংশন কম্বাইন করার অ্যাডভান্সড টেকনিক।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৪: কন্ডিশনাল ফরম্যাটিং ও টেক্সট ফাংশন (বিস্তারিত)</p>
+      <p>ডেটার মানের ওপর ভিত্তি করে সেল হাইলাইট করা এবং টেক্সট ডেটা পরিষ্কার করার নিয়ম।</p>
+      <ul>
+        <li>কন্ডিশনাল ফরম্যাট: নির্দিষ্ট সংখ্যার বড় বা ছোট সেলগুলোতে অটোমেটিক ব্যাকগ্রাউন্ড কালার ও ডাটা বার দেওয়া।</li>
+        <li>টেক্সট ফাংশন: LEFT, RIGHT, MID, CONCATENATE, এবং TRIM ব্যবহার করে এলোমেলো টেক্সট সাজানো।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৫: পিভট টেবিল ও ডেটা অ্যানালাইসিস (বিস্তারিত)</p>
+      <p>বিশাল ডেটাসেটকে মাত্র কয়েক ক্লিকে সংক্ষিপ্ত করে প্রফেশনাল সামারি রিপোর্ট তৈরি করা।</p>
+      <ul>
+        <li>পিভট টেবিল: রো, কলাম ও ফিল্টার ব্যবহার করে সেলস বা ইনভেন্টরি রিপোর্টের দ্রুত সারসংক্ষেপ তৈরি।</li>
+        <li>স্লাইসার ও টাইমলাইন: ইন্টারেক্টিভ ফিল্টারিং টুল যুক্ত করা যা ড্যাশবোর্ডকে আকর্ষণীয় করে তোলে।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৬: চার্ট, গ্রাফ এবং প্রিন্ট অপ্টিমাইজেশন (বিস্তারিত)</p>
+      <p>ডেটাকে দৃশ্যমান গ্রাফে রূপান্তর এবং বড় স্প্রেডশীট এক পেজে নিখুঁতভাবে প্রিন্ট করার নিয়ম।</p>
+      <ul>
+        <li>ডাইনামিক চার্ট: কলাম, লাইন, পাই এবং কম্বো চার্ট তৈরি করে ট্রেন্ড এবং পারফরম্যান্স প্রদর্শন।</li>
+        <li>প্রিন্ট সেটিংস: পেজ ব্রেক প্রিভিউ, প্রিন্ট টাইটেল (রো রিপিট) এবং ফিট-টু-পেজ স্কেলিং কনফিগারেশন।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SHORTCUTS SECTION -->
+  <div class="custom-section" id="shortcuts">
+    <div class="tag">কাজের গতি বাড়ান</div>
+    <p class="section-title">প্রয়োজনীয় কীবোর্ড শর্টকাটসমূহ (১৫টি গুরুত্বপূর্ণ এক্সেল কমান্ড)</p>
+    <div class="desc">মাউসের ব্যবহার কমিয়ে কীবোর্ড কমান্ড ব্যবহারের মাধ্যমে দ্রুত হিসাব-নিকাশ করার সেরা কিছু ট্রিকস।</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>কমান্ড অ্যাকশন</th>
+          <th>কীবোর্ড কীনিয়ম</th>
+          <th>ব্যবহারিক উদ্দেশ্য</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>অটো সাম (AutoSum)</strong></td>
+          <td><kbd>Alt</kbd> + <kbd>=</kbd></td>
+          <td>সিলেক্ট করা কলাম বা রো এর ওপরের সব সংখ্যা এক ক্লিকে যোগ করার দ্রুততম নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>সেল এডিট করা</strong></td>
+          <td><kbd>F2</kbd></td>
+          <td>মাউসে ডাবল ক্লিক না করে সরাসরি যেকোনো সেলের ভেতরের ফর্মুলা বা টেক্সট এডিট করা।</td>
+        </tr>
+        <tr>
+          <td><strong>সেল রেফারেন্স লক</strong></td>
+          <td><kbd>F4</kbd></td>
+          <td>ফর্মুলা লেখার সময় রো এবং কলামকে অ্যাবসোলিউট বা ফিক্সড ($A$1) করার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>কান্ট্রি কারেন্সি ফরম্যাট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>$</kbd></td>
+          <td>সাধারণ সংখ্যাকে সরাসরি কারেন্সি বা মুদ্রা ফরম্যাটে রূপান্তর করার শর্টকাট।</td>
+        </tr>
+        <tr>
+          <td><strong>শতকরা (Percentage)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>%</kbd></td>
+          <td>যেকোনো দশমিক সংখ্যাকে তাৎক্ষণিকভাবে পার্সেন্টেজ ফরম্যাটে পরিবর্তন করার নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>নতুন ওয়ার্কশীট যোগ</strong></td>
+          <td><kbd>Shift</kbd> + <kbd>F11</kbd></td>
+          <td>চলমান ওয়ার্কবুকের ভেতরে দ্রুত সম্পূর্ণ নতুন একটি খালি শিট তৈরি করা।</td>
+        </tr>
+        <tr>
+          <td><strong>ফ্ল্যাশ ফিল (Flash Fill)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+          <td>প্যাটার্ন শনাক্ত করে কলামের বাকি সেলগুলো স্বয়ংক্রিয়ভাবে পূরণ করার চমৎকার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>কারেন্ট ডেট ইনপুট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>;</kbd></td>
+          <td>টাইপ না করে সেলের মধ্যে আজকের বর্তমান তারিখটি সাথে সাথে বসানোর নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>ফিল ডাউন (Fill Down)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+          <td>ঠিক ওপরের সেলের ডাটা বা ফর্মুলা নিচের সেলে হুবহু কপি করে নিয়ে আসা।</td>
+        </tr>
+        <tr>
+          <td><strong>পুরো কলাম সিলেক্ট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Spacebar</kbd></td>
+          <td>চলমান সেলের সম্পূর্ণ কলামটি একবারে সিলেক্ট করার শর্টকাট।</td>
+        </tr>
+        <tr>
+          <td><strong>পুরো রো সিলেক্ট</strong></td>
+          <td><kbd>Shift</kbd> + <kbd>Spacebar</kbd></td>
+          <td>চলমান সেলের সম্পূর্ণ অনুভূমিক লাইন বা রো-টি একবারে সিলেক্ট করার নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>নতুন রো/কলাম যোগ</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>+</kbd></td>
+          <td>ডকুমেন্টে নতুন একটি ফাঁকা রো বা কলাম ইনসার্ট করার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>রো/কলাম ডিলিট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>-</kbd></td>
+          <td>সিলেক্ট করা অতিরিক্ত বা অপ্রয়োজনীয় রো বা কলাম ডিলিট করে ফেলা।</td>
+        </tr>
+        <tr>
+          <td><strong>ফিল্টার মোড অন</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></td>
+          <td>কলামের হেডিং টেবিলগুলোতে দ্রুত ফিল্টার ড্রপডাউন বাটন অন/অফ করার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>হাইপারলিংক যুক্ত করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>K</kbd></td>
+          <td>যেকোনো সেলের টেক্সটের সাথে এক্সটার্নাল লিংক বা অন্য শিটের কানেকশন দেওয়া।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FEATURES SECTION -->
+  <div class="custom-section" id="features">
+    <div class="tag">কেন এই কোর্সটি অনন্য</div>
+    <p class="section-title">কোর্সের প্রধান সুবিধা এবং উপযোগিতা</p>
+    
+    <div class="module-block">
+      <p class="module-title">০১. বাস্তবমুখী প্রজেক্ট ভিত্তিক শিখন</p>
+      <p>থিওরির পাশাপাশি প্রতিটি ক্লাসে অফিশিয়াল সেলারি শীট, ইনভয়েস জেনারেটর ও ড্যাশবোর্ড তৈরি করে লাইভ দেখানো।</p>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">০২. আজীবন অ্যাক্সেস ও সাপোর্ট</p>
+      <p>কোর্সের ফাইল এবং প্র্যাকটিস এক্সেল মেটেরিয়াল যেকোনো সময় যেকোনো স্থান থেকে আজীবন দেখার সুবিধা রয়েছে।</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="custom-footer">
+    <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+<p>&copy; Excel Course. সর্বস্বত্ব সংরক্ষিত। মেন্টর: তাইবুল ইসলাম।</p>
+  </div>
+
+</body>
+</html>

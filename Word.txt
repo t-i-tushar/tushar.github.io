@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Microsoft Word Full Course by Taibul Islam</title>
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  /* basic resets */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: #f4f7f6;
+    color: #1a2a26;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  /* navigation */
+  .custom-nav {
+    background-color: #0d231f;
+    border-bottom: 2px solid #d4af37;
+    padding: 15px;
+    text-align: center;
+  }
+  .custom-nav .logo {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .custom-nav .logo span {
+    color: #d4af37;
+    font-size: 12px;
+  }
+  .custom-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  /* hero section */
+  .custom-hero {
+    background-color: #0d231f;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .custom-hero .pill {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    padding: 4px 12px;
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .custom-hero .hero-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  .custom-hero .hero-title em {
+    font-style: normal;
+    color: #cbd5e1;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .custom-hero p {
+    color: #94a3b8;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    font-size: 12px;
+  }
+  .custom-hero .btn {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #0d231f;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  /* basic sections */
+  .custom-section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .custom-section .tag {
+    color: #173f37;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .custom-section .section-title {
+    color: #0d231f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .custom-section .desc {
+    color: #4a5568;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  /* list formatting for modules */
+  .module-block {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  .module-block .module-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0d231f;
+    margin-bottom: 5px;
+  }
+  .module-block p {
+    font-size: 12px;
+    color: #4a5568;
+  }
+  .module-block ul {
+    margin-top: 8px;
+    padding-left: 20px;
+  }
+  .module-block li {
+    font-size: 12px;
+    color: #4a5568;
+  }
+
+  /* robust table formatting for shortcuts */
+  .shortcut-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+  }
+  .shortcut-table th, .shortcut-table td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .shortcut-table th {
+    background-color: #edf2f1;
+    color: #0d231f;
+    font-weight: bold;
+  }
+  .shortcut-table kbd {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #0d231f;
+    border-radius: 3px;
+  }
+
+  /* footer */
+  .custom-footer {
+    background-color: #091715;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 12px;
+    border-top: 2px solid #d4af37;
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="custom-nav">
+    <div class="logo">WORD <span>by তাইবুল ইসলাম</span></div>
+    <a href="#lessons">পাঠ্যসূচী</a> | 
+    <a href="#shortcuts">শর্টকাটসমূহ</a> | 
+    <a href="#features">সুবিধাসমূহ</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="custom-hero">
+    <div class="pill">মাইক্রোসফট ওয়ার্ড মাস্টারক্লাস</div>
+    <p class="hero-title">এমএস ওয়ার্ড এর খুঁটিনাটি শিখুন জিরো থেকে অ্যাডভান্সড লেভেলে <em>পেশাদার ডকুমেন্টেশন গাইড</em></p>
+    <p>সহজ বাংলা ভাষায় সাজানো এই কোর্সটি আপনাকে যেকোনো প্রাতিষ্ঠানিক প্রজেক্ট, সিভি রাইটিং, এবং জটিল ফরমেটিং এ দক্ষ করে তুলবে।</p>
+    <a href="#lessons" class="btn">কোর্স শুরু করুন</a>
+  </div>
+
+  <!-- LESSONS SECTION -->
+  <div class="custom-section" id="lessons">
+    <div class="tag">লার্নিং মডিউল</div>
+    <p class="section-title">প্রধান পাঠসমূহ এবং বিষয়বস্তু</p>
+    <div class="desc">ধাপ অনুসারে সাজানো প্রতিটি ক্লাসের গভীর বিশ্লেষণ এবং ব্যবহারিক প্রজেক্ট গাইডলাইন:</div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০১: টেক্সট ফরম্যাটিং ও স্টাইলস (বিস্তারিত)</p>
+      <p>ফন্ট কাস্টমাইজেশন, প্যারাগ্রাফ অ্যালাইনমেন্ট এবং কালার থিমের সঠিক ব্যবহারের নিয়মাবলি।</p>
+      <ul>
+        <li>ফন্ট সিলেকশন: প্রফেশনাল রিপোর্টের জন্য সুতন্বী এমজে এবং কালপুরুষ ফন্টের সঠিক কনফিগারেশন।</li>
+        <li>প্যারাগ্রাফ স্পেসিং: স্ট্যান্ডার্ড ১.১৫ এবং ১.৫ লাইন স্পেসিং ব্যবহারের মাধ্যমে পঠনযোগ্যতা বৃদ্ধি।</li>
+        <li>স্টাইল গ্যালারি: হেডিং ১, হেডিং ২ কাস্টমাইজেশন করে ডকুমেন্টের থিম ডিজাইন অটোমেট করা।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০২: টেবিল ও চার্ট ডিজাইন (বিস্তারিত)</p>
+      <p>যেকোনো জটিল ডেটা সুন্দরভাবে উপস্থাপন করার জন্য টেবিল স্ট্রাকচার এবং চার্ট ব্যবহারের কৌশল।</p>
+      <ul>
+        <li>টেবিল ডিজাইন: কলাম বর্ডার হাইড করা, সেল মার্জিন দেওয়া এবং কালার শেডিং অ্যাড করার নিয়ম।</li>
+        <li>ডেটা সর্টিং: টেবিলের ভেতরের নাম বা সংখ্যার ডেটাকে এক ক্লিকে আরোহী/অবরোহী ক্রমানুসারে সাজানো।</li>
+        <li>চার্ট ইমপোর্ট: মাইক্রোসফট এক্সেল থেকে লাইভ গ্রাফ বা পাই-চার্ট নিয়ে এসে ওয়ার্ড ফাইলে সিঙ্ক করা।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৩: পেজ লেআউট ও প্রিন্ট সেটিংস (বিস্তারিত)</p>
+      <p>মার্জিন, ওরিয়েন্টেশন, পেজ বর্ডার, পেজ নাম্বার এবং নির্ভুলভাবে প্রিন্ট করার অ্যাডভান্সড সেটিংস।</p>
+      <ul>
+        <li>মার্জিন গাইড: সরকারি ও প্রাতিষ্ঠানিক চিঠির জন্য এ৪ এবং লিগ্যাল পেজের মার্জিন নির্ধারণ।</li>
+        <li>পেজ ব্রেক: ম্যানুয়ালি এন্টার না চেপে প্রফেশনাল উপায়ে সেকশন ব্রেক এবং পেজ ব্রেক ব্যবহারের নিয়ম।</li>
+        <li>প্রিন্ট প্রিভিউ: স্কেলিং ঠিক করা যেন প্রিন্ট করার সময় কোনো টেক্সট বা বর্ডার কেটে না যায়।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৪: মেইল মার্জ ও অটোমেশন (বিস্তারিত)</p>
+      <p>এক ক্লিকে শত শত মানুষের কাছে কাস্টমাইজড অফিশিয়াল চিঠি এবং মেইল পাঠানোর আধুনিক নিয়ম।</p>
+      <ul>
+        <li>বাল্ক ডকুমেন্টেশন: একটি একক লেটার ফরম্যাট ব্যবহার করে হাজারো ক্লায়েন্টের জন্য চিঠি তৈরি।</li>
+        <li>এনভেলপ ও লেবেল: অফিশিয়াল খামের ওপর নাম ও ঠিকানা সরাসরি ডাটাবেজ থেকে প্রিন্ট করার ট্রিকস।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৫: রেফারেন্স ও ইনডেক্সিং (বিস্তারিত)</p>
+      <p>বই বা থিসিস পেপারের জন্য অটোমেটিক টেবিল অব কন্টেন্টস (সূচিপত্র), ফুটনোট এবং সাইটেশন তৈরি।</p>
+      <ul>
+        <li>অটো সূচিপত্র: পেজ নাম্বার টাইপ না করে এক ক্লিকে সম্পূর্ণ ফাইলের সূচিপত্র আপডেট করার পদ্ধতি।</li>
+        <li>ফুটনোট ও এন্ডনোট: ডকুমেন্টের নিচে বা চ্যাপ্টারের শেষে রেফারেন্স ও সোর্স মেটেরিয়াল যুক্ত করা।</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">মডিউল ০৬: ডকুমেন্ট সিকিউরিটি ও প্রোটেকশন (বিস্তারিত)</p>
+      <p>আপনার দরকারি ওয়ার্ড ফাইলে পাসওয়ার্ড সেট করা, এডিটিং লক করা এবং ওয়াটারমার্ক যুক্ত করার নিয়ম।</p>
+      <ul>
+        <li>ফাইল এনক্রিপশন: গুরুত্বপূর্ণ ও গোপনীয় নথিপত্র পাসওয়ার্ড দিয়ে লক করার নিরাপদ নিয়ম।</li>
+        <li>রেস্ট্রিক্ট এডিটিং: অন্য কেউ যেন আপনার ফরম্যাটিং পরিবর্তন করতে না পারে তার জন্য রিড-অনলি লক।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SHORTCUTS SECTION -->
+  <div class="custom-section" id="shortcuts">
+    <div class="tag">কাজের গতি বাড়ান</div>
+    <p class="section-title">প্রয়োজনীয় কীবোর্ড শর্টকাটসমূহ (১৫টি গুরুত্বপূর্ণ কমান্ড)</p>
+    <div class="desc">মাউসের ব্যবহার কমিয়ে কীবোর্ড কমান্ড ব্যবহারের মাধ্যমে দ্রুত কাজ করার সেরা কিছু ট্রিকস।</div>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>কমান্ড অ্যাকশন</th>
+          <th>কীবোর্ড কীনিয়ম</th>
+          <th>ব্যবহারিক উদ্দেশ্য</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>নতুন ডকুমেন্ট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>N</kbd></td>
+          <td>সম্পূর্ণ নতুন একটি খালি ফাইল তৈরি করতে এটি ব্যবহার করা হয়।</td>
+        </tr>
+        <tr>
+          <td><strong>সংরক্ষণ করুন</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>S</kbd></td>
+          <td>আপনার করা কাজ হার্ড ড্রাইভে সাথে সাথে সেভ করার জন্য।</td>
+        </tr>
+        <tr>
+          <td><strong>পূর্বের অবস্থায় ফেরা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td>
+          <td>ভুলবশত কোনো টেক্সট ডিলিট হয়ে গেলে এক ধাপ পেছনে যাওয়ার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>সব টেক্সট সিলেক্ট</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>A</kbd></td>
+          <td>পুরো ডকুমেন্টের সব লেখা একসাথে সিলেক্ট করার নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা বোল্ড করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>B</kbd></td>
+          <td>নির্বাচিত লেখাকে গাঢ় বা মোটা অক্ষরে রূপান্তর করতে।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা কপি করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>C</kbd></td>
+          <td>কোনো লেখা পরিবর্তন না করে অন্য জায়গায় বসানোর জন্য কপি করা।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা পেস্ট করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>V</kbd></td>
+          <td>কপি বা কাট করা লেখা নির্দিষ্ট স্থানে স্থাপন করার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা খোঁজা (Find)</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+          <td>ডকুমেন্টের ভেতর থেকে নির্দিষ্ট কোনো শব্দ দ্রুত খুঁজে বের করা।</td>
+        </tr>
+        <tr>
+          <td><strong>প্রিন্ট অপশন</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>P</kbd></td>
+          <td>ডকুমেন্টটি প্রিন্ট করার জন্য প্রিন্টার উইন্ডো ওপেন করা।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা ইটালিক করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>I</kbd></td>
+          <td>নির্বাচিত টেক্সটগুলোকে ডানদিকের কোণায় হালকা বাঁকা (ইটালিক) করার জন্য।</td>
+        </tr>
+        <tr>
+          <td><strong>আন্ডারলাইন করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+          <td>যেকোনো গুরুত্বপূর্ণ বাক্যের নিচে একটি আন্ডারলাইন বা রেখা টানার কমান্ড।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা মাঝখানে নেওয়া</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+          <td>হেডিং বা টাইটেলকে পেজের ঠিক মাঝখানে (Center Align) বসানোর নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>লেখা জাস্টিফাই করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>J</kbd></td>
+          <td>প্যারাগ্রাফের দুই পাশের মার্জিন সমান এবং প্রফেশনাল আকারে সোজা করা।</td>
+        </tr>
+        <tr>
+          <td><strong>ফন্ট সাইজ বাড়ানো</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>]</kbd></td>
+          <td>সিলেক্ট করা টেক্সটের সাইজ ধাপে ধাপে বড় করার কীবোর্ড নিয়ম।</td>
+        </tr>
+        <tr>
+          <td><strong>ডকুমেন্ট বন্ধ করা</strong></td>
+          <td><kbd>Ctrl</kbd> + <kbd>W</kbd></td>
+          <td>চলমান ওয়ার্ড ফাইলটি সম্পূর্ণ বন্ধ করে হোম স্ক্রিনে ফিরে যাওয়া।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FEATURES SECTION -->
+  <div class="custom-section" id="features">
+    <div class="tag">কেন এই কোর্সটি অনন্য</div>
+    <p class="section-title">কোর্সের প্রধান সুবিধা এবং উপযোগিতা</p>
+    
+    <div class="module-block">
+      <p class="module-title">০১. বাস্তবমুখী প্রজেক্ট ভিত্তিক শিখন</p>
+      <p>থিওরির পাশাপাশি প্রতিটি ক্লাসে অফিশিয়াল লেটারহেড, সিভি ও মেমো তৈরি করে লাইভ দেখানো।</p>
+    </div>
+
+    <div class="module-block">
+      <p class="module-title">০২. আজীবন অ্যাক্সেস ও সাপোর্ট</p>
+      <p>কোর্সের ফাইল এবং রিসোর্স ম্যাটেরিয়াল যেকোনো সময় যেকোনো স্থান থেকে আজীবন দেখার সুবিধা রয়েছে।</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="custom-footer">
+    <p>যোগাযোগ করুন — ইমেইল: <a href="mailto:taibul.ahkc@gmail.com">taibul.ahkc@gmail.com</a> | ফোন: <a href="tel:+8801708708596">+8801708708596</a></p>
+<p>&copy; Word Course. সর্বস্বত্ব সংরক্ষিত। মেন্টর: তাইবুল ইসলাম।</p>
+  </div>
+
+</body>
+</html>
